@@ -2,8 +2,13 @@
 
 const createEnumerableProperty = (propertyName) => propertyName;
 
+const createNotEnumerableProperty = (propertyName) => {
+    return Symbol(propertyName);
+};
 
-const createNotEnumerableProperty = () => {};
+
+
+
 const createProtoMagicObject = () => {};
 const incrementor = () => {};
 const asyncIncrementor = () => {};
