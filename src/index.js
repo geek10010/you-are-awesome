@@ -28,7 +28,13 @@ const asyncIncrementor = () => {
 
 
 // 6
-const createIncrementer = () => {};
+function* createIncrementer() {
+  let counter = 0;
+  while (true) {
+    yield counter += 1;
+  }
+}
+
 
 // 7
 // return same argument not earlier than in one second, and not later, than in two
