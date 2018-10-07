@@ -26,7 +26,6 @@ const asyncIncrementor = () => {
   return inner;
 };
 
-
 // 6
 const createIncrementer = () => {
   function* increment() {
@@ -38,12 +37,15 @@ const createIncrementer = () => {
   return increment();
 };
 
-
 // 7
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {
-  //
+const returnBackInSecond = (param) => {
+  const resolveLater = (resolve) => {
+    setTimeout(() => resolve(param), 1000);
+  };
+  return new Promise(resolveLater);
 };
+
 
 // 8
 const getDeepPropertiesCount = () => {};
@@ -52,7 +54,7 @@ const getDeepPropertiesCount = () => {};
 const createSerializedObject = () => {};
 
 // 10
-const toBuffer = () => {};
+// const toBuffer = () => {};
 
 // 11
 const sortByProto = () => {};
@@ -67,5 +69,5 @@ exports.createIncrementer = createIncrementer;
 exports.returnBackInSecond = returnBackInSecond;
 exports.getDeepPropertiesCount = getDeepPropertiesCount;
 exports.createSerializedObject = createSerializedObject;
-exports.toBuffer = toBuffer;
+// exports.toBuffer = toBuffer;
 exports.sortByProto = sortByProto;
