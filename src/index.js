@@ -28,17 +28,22 @@ const asyncIncrementor = () => {
 
 
 // 6
-function* createIncrementer() {
-  let counter = 0;
-  while (true) {
-    yield counter += 1;
+const createIncrementer = () => {
+  function* increment() {
+    let counter = 0;
+    while (true) {
+      yield counter += 1;
+    }
   }
-}
+  return increment();
+};
 
 
 // 7
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = () => {
+  //
+};
 
 // 8
 const getDeepPropertiesCount = () => {};
