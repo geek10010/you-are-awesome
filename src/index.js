@@ -46,17 +46,29 @@ const returnBackInSecond = (param) => {
   return new Promise(resolveLater);
 };
 
-
 // 8
-const getDeepPropertiesCount = () => {};
+const getDeepPropertiesCount = (obj) => {
+  let counter = 0;
+
+  const count = (object) => {
+    const objKeys = Object.keys(object);
+    if (objKeys.length) {
+      objKeys.forEach((key) => {
+        counter += 1;
+        count(object[key]);
+      });
+    }
+  };
+
+  count(obj);
+  return counter;
+};
+
 
 // 9
 const createSerializedObject = () => {};
 
 // 10
-// const toBuffer = () => {};
-
-// 11
 const sortByProto = () => {};
 
 
@@ -69,5 +81,4 @@ exports.createIncrementer = createIncrementer;
 exports.returnBackInSecond = returnBackInSecond;
 exports.getDeepPropertiesCount = getDeepPropertiesCount;
 exports.createSerializedObject = createSerializedObject;
-// exports.toBuffer = toBuffer;
 exports.sortByProto = sortByProto;
